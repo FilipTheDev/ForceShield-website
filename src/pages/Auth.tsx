@@ -104,36 +104,36 @@ const Auth: React.FC = () => {
       <div className="auth-container">
         <div className="auth-header">
           <h1 className="auth-title">
-            {mode === 'signup' ? 'Create Your Account' : 'Welcome Back'}
+            {mode === 'signup' ? 'Создадете ја Вашата Сметка' : 'Добредојдовте Назад'}
           </h1>
           <p className="auth-subtitle">
             {mode === 'signup' 
-              ? 'Join ForceShield and protect your digital life' 
-              : 'Sign in to access your ForceShield dashboard'}
+              ? 'Придружете се на ForceShield и заштитете го вашиот дигитален живот' 
+              : 'Најавете се за пристап до вашата ForceShield контролна табла'}
           </p>
         </div>
 
         {mode === 'signup' && !formData.role && (
           <div className="role-selection">
-            <h2 className="role-title">Choose Your Account Type</h2>
+            <h2 className="role-title">Изберете го Вашиот Тип на Сметка</h2>
             <div className="role-cards">
               <div 
                 className="role-card role-pro"
                 onClick={() => handleRoleSelect('pro')}
               >
                 <div className="role-icon">👨‍💼</div>
-                <h3>Pro Account</h3>
+                <h3>Про Сметка</h3>
                 <p className="role-description">
-                  For parents, schools, universities, and organizations
+                  За родители, училишта, универзитети и организации
                 </p>
                 <ul className="role-features">
-                  <li>✓ Full control and monitoring</li>
-                  <li>✓ Manage multiple users</li>
-                  <li>✓ Advanced filtering options</li>
-                  <li>✓ Detailed reports and analytics</li>
-                  <li>✓ Priority support</li>
+                  <li>✓ Целосна контрола и следење</li>
+                  <li>✓ Управувајте со повеќе корисници</li>
+                  <li>✓ Напредни опции за филтрирање</li>
+                  <li>✓ Детални извештаи и аналитика</li>
+                  <li>✓ Приоритетна поддршка</li>
                 </ul>
-                <button className="role-button">Select Pro</button>
+                <button className="role-button">Избери Про</button>
               </div>
 
               <div 
@@ -141,18 +141,18 @@ const Auth: React.FC = () => {
                 onClick={() => handleRoleSelect('basic')}
               >
                 <div className="role-icon">👤</div>
-                <h3>Basic Account</h3>
+                <h3>Основна Сметка</h3>
                 <p className="role-description">
-                  For children, students, and employees
+                  За деца, студенти и вработени
                 </p>
                 <ul className="role-features">
-                  <li>✓ Personal protection</li>
-                  <li>✓ Real-time threat detection</li>
-                  <li>✓ AI assistant access</li>
-                  <li>✓ Safe browsing experience</li>
-                  <li>✓ Educational resources</li>
+                  <li>✓ Лична заштита</li>
+                  <li>✓ Откривање на закани во реално време</li>
+                  <li>✓ Пристап до АИ асистент</li>
+                  <li>✓ Безбедно искуство за прелистување</li>
+                  <li>✓ Едукативни ресурси</li>
                 </ul>
-                <button className="role-button">Select Basic</button>
+                <button className="role-button">Избери Основна</button>
               </div>
             </div>
           </div>
@@ -166,21 +166,21 @@ const Auth: React.FC = () => {
                   {formData.role === 'pro' ? '👨‍💼' : '👤'}
                 </span>
                 <span className="role-badge-text">
-                  {formData.role === 'pro' ? 'Pro Account' : 'Basic Account'}
+                  {formData.role === 'pro' ? 'Про Сметка' : 'Основна Сметка'}
                 </span>
                 <button 
                   type="button" 
                   className="role-badge-change"
                   onClick={() => handleRoleSelect(null)}
                 >
-                  Change
+                  Промени
                 </button>
               </div>
             )}
 
             {mode === 'signup' && (
               <div className="form-group">
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">Цело Име</label>
                 <input
                   type="text"
                   id="name"
@@ -188,14 +188,14 @@ const Auth: React.FC = () => {
                   value={formData.name}
                   onChange={handleInputChange}
                   className={errors.name ? 'error' : ''}
-                  placeholder="Enter your full name"
+                  placeholder="Внесете го вашето цело име"
                 />
                 {errors.name && <span className="error-message">{errors.name}</span>}
               </div>
             )}
 
             <div className="form-group">
-              <label htmlFor="email">Email Address</label>
+              <label htmlFor="email">Емаил Адреса</label>
               <input
                 type="email"
                 id="email"
@@ -203,14 +203,14 @@ const Auth: React.FC = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className={errors.email ? 'error' : ''}
-                placeholder="your.email@example.com"
+                placeholder="vashemail@priimer.com"
               />
               {errors.email && <span className="error-message">{errors.email}</span>}
             </div>
 
             {mode === 'signup' && formData.role === 'pro' && (
               <div className="form-group">
-                <label htmlFor="organizationName">Organization Name</label>
+                <label htmlFor="organizationName">Име на Организација</label>
                 <input
                   type="text"
                   id="organizationName"
@@ -218,14 +218,14 @@ const Auth: React.FC = () => {
                   value={formData.organizationName}
                   onChange={handleInputChange}
                   className={errors.organizationName ? 'error' : ''}
-                  placeholder="Your school, company, or organization name"
+                  placeholder="Вашето училиште, компанија или име на организација"
                 />
                 {errors.organizationName && <span className="error-message">{errors.organizationName}</span>}
               </div>
             )}
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Лозинка</label>
               <input
                 type="password"
                 id="password"
@@ -233,17 +233,17 @@ const Auth: React.FC = () => {
                 value={formData.password}
                 onChange={handleInputChange}
                 className={errors.password ? 'error' : ''}
-                placeholder="Enter a strong password"
+                placeholder="Внесете силна лозинка"
               />
               {errors.password && <span className="error-message">{errors.password}</span>}
               {mode === 'signup' && (
-                <span className="input-hint">At least 8 characters with letters and numbers</span>
+                <span className="input-hint">Најмалку 8 карактери со букви и броеви</span>
               )}
             </div>
 
             {mode === 'signup' && (
               <div className="form-group">
-                <label htmlFor="confirmPassword">Confirm Password</label>
+                <label htmlFor="confirmPassword">Потврдете Лозинка</label>
                 <input
                   type="password"
                   id="confirmPassword"
@@ -251,7 +251,7 @@ const Auth: React.FC = () => {
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
                   className={errors.confirmPassword ? 'error' : ''}
-                  placeholder="Re-enter your password"
+                  placeholder="Повторно внесете ја вашата лозинка"
                 />
                 {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
               </div>
@@ -261,18 +261,18 @@ const Auth: React.FC = () => {
               <div className="form-extras">
                 <label className="checkbox-label">
                   <input type="checkbox" />
-                  <span>Remember me</span>
+                  <span>Запомни ме</span>
                 </label>
-                <a href="#" className="forgot-password">Forgot password?</a>
+                <a href="#" className="forgot-password">Заборавивте лозинка?</a>
               </div>
             )}
 
             <button type="submit" className="submit-button">
-              {mode === 'signup' ? 'Create Account' : 'Sign In'}
+              {mode === 'signup' ? 'Создади Сметка' : 'Најави Се'}
             </button>
 
             <div className="auth-divider">
-              <span>or</span>
+              <span>или</span>
             </div>
 
             <button type="button" className="oauth-button google-button">
@@ -282,18 +282,18 @@ const Auth: React.FC = () => {
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
               </svg>
-              Continue with Google
+              Продолжи со Google
             </button>
 
             <div className="auth-switch">
               <p>
-                {mode === 'signup' ? 'Already have an account?' : "Don't have an account?"}
+                {mode === 'signup' ? 'Веќе имате сметка?' : 'Немате сметка?'}
                 <button 
                   type="button" 
                   className="switch-mode-button"
                   onClick={() => setMode(mode === 'signup' ? 'login' : 'signup')}
                 >
-                  {mode === 'signup' ? 'Sign In' : 'Sign Up'}
+                  {mode === 'signup' ? 'Најави Се' : 'Регистрирај Се'}
                 </button>
               </p>
             </div>
@@ -302,8 +302,8 @@ const Auth: React.FC = () => {
 
         <div className="auth-footer">
           <p className="disclaimer">
-            <strong>Demo Notice:</strong> This is a frontend demonstration. 
-            User authentication will be connected to a secure backend API in production.
+            <strong>Демо Напомена:</strong> Ова е frontend демонстрација. 
+            Автентикацијата на корисници ќе биде поврзана со безбеден backend API во продукција.
           </p>
         </div>
       </div>

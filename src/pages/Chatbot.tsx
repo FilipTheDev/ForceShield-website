@@ -12,7 +12,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hello! I\'m ForceShield AI Assistant. I can help you understand cyber threats, answer security questions, and provide safety tips. What would you like to know?',
+      text: 'Здраво! Јас сум Козмо, вашиот ForceShield асистент. Можам да ви помогнам да разберете кибер закани, да одговорам на безбедносни прашања и да обезбедам совети за безбедност. Што сакате да знаете?',
       sender: 'bot',
       timestamp: new Date()
     }
@@ -30,12 +30,12 @@ const Chatbot: React.FC = () => {
   }, [messages]);
 
   const suggestedQuestions = [
-    'What is phishing?',
-    'How can I create a strong password?',
-    'Is this website safe to use?',
-    'What should I do if I clicked a suspicious link?',
-    'How can I protect my children online?',
-    'What is two-factor authentication?'
+    'Што е фишинг?',
+    'Како можам да креирам силна лозинка?',
+    'Дали оваа веб-страница е безбедна за користење?',
+    'Што треба да направам ако кликнав на сомнителна врска?',
+    'Како можам да ги заштитам моите деца онлајн?',
+    'Што е двофакторска автентикација?'
   ];
 
   const getBotResponse = (userMessage: string): string => {
@@ -127,16 +127,19 @@ const Chatbot: React.FC = () => {
       <div className="chatbot-container">
         <div className="chatbot-header">
           <div className="chatbot-header-content">
-            <div className="chatbot-avatar">🤖</div>
+            <div className="chatbot-avatar">
+              <img src="/Cosmo.png" alt="Козмо" className="avatar-img" />
+            </div>
             <div className="chatbot-header-text">
-              <h2>ForceShield AI Assistant</h2>
+              <h2>Козмо</h2>
               <p className="chatbot-status">
-                <span className="status-dot"></span> Online
+                <span className="status-dot"></span>
+                Активен и подготвен за помош
               </p>
             </div>
           </div>
           <div className="chatbot-info">
-            <p>Ask me anything about cybersecurity and online safety!</p>
+            <p>Прашајте ме за кибер безбедност, заканите, и како да останете безбедни онлајн.</p>
           </div>
         </div>
 
@@ -147,7 +150,9 @@ const Chatbot: React.FC = () => {
               className={`message ${message.sender === 'user' ? 'message-user' : 'message-bot'}`}
             >
               {message.sender === 'bot' && (
-                <div className="message-avatar">🤖</div>
+                <div className="message-avatar">
+                  <img src="/Cosmo.png" alt="Козмо" className="avatar-img" />
+                </div>
               )}
               <div className="message-content">
                 <div className="message-bubble">
@@ -164,7 +169,9 @@ const Chatbot: React.FC = () => {
           ))}
           {isTyping && (
             <div className="message message-bot">
-              <div className="message-avatar">🤖</div>
+              <div className="message-avatar">
+                <img src="/Cosmo.png" alt="Козмо" className="avatar-img" />
+              </div>
               <div className="message-content">
                 <div className="message-bubble typing-indicator">
                   <span></span>
@@ -178,7 +185,7 @@ const Chatbot: React.FC = () => {
         </div>
 
         <div className="chatbot-suggestions">
-          <p className="suggestions-title">Suggested questions:</p>
+          <p className="suggestions-title">Предложени прашања:</p>
           <div className="suggestions-list">
             {suggestedQuestions.map((question, index) => (
               <button
@@ -197,7 +204,7 @@ const Chatbot: React.FC = () => {
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Type your question here..."
+            placeholder="Внесете го вашето прашање овде..."
             className="chatbot-input"
           />
           <button type="submit" className="chatbot-send-button" disabled={!inputValue.trim()}>
@@ -209,8 +216,8 @@ const Chatbot: React.FC = () => {
         </form>
 
         <div className="chatbot-disclaimer">
-          <strong>Note:</strong> This is a demo chatbot with pre-programmed responses. 
-          The full version will be connected to our AI API for more comprehensive and personalized assistance.
+          <strong>Напомена:</strong> Ова е демо chatbot со однапред програмирани одговори. 
+          Целосната верзија ќе биде поврзана со нашето АИ API за посеопфатна и персонализирана помош.
         </div>
       </div>
     </div>

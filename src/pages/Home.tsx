@@ -173,16 +173,16 @@ const Home: React.FC = () => {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-            Protect Yourself from<br />
-            <span className="gradient-text">Cyber Threats</span>
+            Заштитете се од<br />
+            <span className="gradient-text">Кибер Закани</span>
           </h1>
           <p className="hero-subtitle">
-            Learn about the most common online threats and how to stay safe. 
-            ForceShield provides real-time protection for families, schools, and organizations.
+            Научете за најчестите онлајн закани и како да останете безбедни. 
+            ForceShield обезбедува заштита во реално време за семејства, училишта и организации.
           </p>
           <div className="hero-buttons">
-            <a href="#scanner" className="btn btn-primary">Try Our Scanner</a>
-            <a href="#threats" className="btn btn-secondary">Learn More</a>
+            <a href="#scanner" className="btn btn-primary">Пробајте го нашиот Скенер</a>
+            <a href="#threats" className="btn btn-secondary">Дознајте Повеќе</a>
           </div>
         </div>
         <div className="hero-image">
@@ -208,37 +208,37 @@ const Home: React.FC = () => {
 
       {/* Features Section */}
       <section className="features">
-        <h2 className="section-title">How ForceShield Protects You</h2>
+        <h2 className="section-title">Како ForceShield ве заштитува</h2>
         <div className="features-grid">
           <div className="feature-card">
             <div className="feature-icon">🛡️</div>
-            <h3>Browser Extension</h3>
-            <p>Real-time scanning of every website you visit. Get instant warnings about dangerous sites, phishing attempts, and malware.</p>
+            <h3>Проширување за Прелистувач</h3>
+            <p>Скенирање во реално време на секоја веб-страница која ја посетувате. Добивајте моментални предупредувања за опасни страници, фишинг обиди и малициозен софтвер.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🔍</div>
-            <h3>Link & File Scanner</h3>
-            <p>Scan suspicious links and files before opening them. Our AI-powered system detects threats before they can harm you.</p>
+            <h3>Скенер за Врски и Датотеки</h3>
+            <p>Скенирајте сомнителни врски и датотеки пред да ги отворите. Нашиот АИ систем ги открива заканите пред тие да ви наштетат.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">👨‍👩‍👧‍👦</div>
-            <h3>Family Protection</h3>
-            <p>Parents can set filters, block websites, and monitor their children's online activities to ensure safe browsing.</p>
+            <h3>Семејна Заштита</h3>
+            <p>Родителите можат да поставуваат филтри, блокираат веб-страници и ги следат онлајн активностите на нивните деца за да обезбедат безбедно прелистување.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🏫</div>
-            <h3>School & Organization</h3>
-            <p>Centrally managed protection that cannot be disabled by students or employees, ensuring a safe digital environment.</p>
+            <h3>Училиште и Организација</h3>
+            <p>Централно управувана заштита која не може да биде оневозможена од ученици или вработени, обезбедувајќи безбедна дигитална околина.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">🤖</div>
-            <h3>AI Education Bot</h3>
-            <p>Interactive chatbot that explains threats in simple terms and answers your security questions 24/7.</p>
+            <h3>АИ Едукативен Бот</h3>
+            <p>Интерактивен chatbot кој ги објаснува заканите на едноставен јазик и одговара на вашите безбедносни прашања 24/7.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon">📚</div>
-            <h3>Security Education</h3>
-            <p>Learn about common threats, how they work, and practical steps to protect yourself and your loved ones.</p>
+            <h3>Безбедносна Едукација</h3>
+            <p>Научете за вообичаените закани, како функционираат и практични чекори за да се заштитите вие и вашите најблиски.</p>
           </div>
         </div>
       </section>
@@ -246,21 +246,21 @@ const Home: React.FC = () => {
       {/* Scanner Section */}
       <section id="scanner" className="scanner-section">
         <div className="scanner-container">
-          <h2 className="section-title">Scan a Link or Website</h2>
+          <h2 className="section-title">Скенирај Врска или Веб-страница</h2>
           <p className="scanner-subtitle">
-            Enter a URL to check if it's safe before visiting. Our AI analyzes millions of threat indicators.
+            Внесете URL адреса за да проверите дали е безбедна пред да ја посетите. Нашата АИ анализира милиони показатели за закани.
           </p>
           <form onSubmit={handleScan} className="scanner-form">
             <input
               type="url"
               value={scanUrl}
               onChange={(e) => setScanUrl(e.target.value)}
-              placeholder="Enter a URL to scan (e.g., https://example.com)"
+              placeholder="Внесете URL адреса за скенирање (пр. https://example.com)"
               className="scanner-input"
               required
             />
             <button type="submit" className="btn btn-primary">
-              {scanResult === 'scanning' ? 'Scanning...' : 'Scan Now'}
+              {scanResult === 'scanning' ? 'Скенирам...' : 'Скенирај Сега'}
             </button>
           </form>
           {scanResult && scanResult !== 'scanning' && (
@@ -269,25 +269,25 @@ const Home: React.FC = () => {
                 <>
                   <div className="result-icon">✅</div>
                   <div className="result-content">
-                    <h3>Safe Website</h3>
-                    <p>This website appears to be safe. No threats detected.</p>
-                    <small>Note: This is a demo. Connect to our API for real scanning.</small>
+                    <h3>Безбедна Веб-страница</h3>
+                    <p>Оваа веб-страница изгледа дека е безбедна. Не се открие ни закани.</p>
+                    <small>Напомена: Ова е демо. Поврзете се со нашето API за реално скенирање.</small>
                   </div>
                 </>
               )}
             </div>
           )}
           <div className="scanner-note">
-            <strong>Note:</strong> File scanning will be available soon. Currently, we support URL scanning.
+            <strong>Напомена:</strong> Скенирање на датотеки наскоро ќе биде достапно. Моментално поддржуваме само скенирање на URL адреси.
           </div>
         </div>
       </section>
 
       {/* Threats Education Section */}
       <section id="threats" className="threats-section">
-        <h2 className="section-title">Common Cyber Threats Explained</h2>
+        <h2 className="section-title">Објаснети Вообичаени Кибер Закани</h2>
         <p className="threats-subtitle">
-          Understanding threats is the first step to staying safe online. Click on any threat to learn more.
+          Разбирањето на заканите е првиот чекор кон безбедност онлајн. Кликнете на која било закана за да дознаете повеќе.
         </p>
         <div className="threats-grid">
           {threats.map((threat) => (
@@ -299,7 +299,7 @@ const Home: React.FC = () => {
               <div className="threat-icon">{threat.icon}</div>
               <h3>{threat.title}</h3>
               <p>{threat.description}</p>
-              <button className="threat-learn-more">Learn More →</button>
+              <button className="threat-learn-more">Дознај Повеќе →</button>
             </div>
           ))}
         </div>
@@ -307,30 +307,30 @@ const Home: React.FC = () => {
 
       {/* Educational Resources */}
       <section className="resources-section">
-        <h2 className="section-title">Additional Resources</h2>
+        <h2 className="section-title">Дополнителни Ресурси</h2>
         <p className="resources-subtitle">
-          Expand your cybersecurity knowledge with these helpful materials.
+          Проширете го вашето знаење за кибер безбедност со овие корисни материјали.
         </p>
         <div className="resources-grid">
           <div className="resource-card">
-            <h3>📖 Beginner's Guide to Online Safety</h3>
-            <p>A comprehensive guide covering the basics of staying safe online.</p>
-            <a href="#" className="resource-link">Coming Soon</a>
+            <h3>📖 Водич за Почетници за Онлајн Безбедност</h3>
+            <p>Сеопфатен водич кој ги покрива основите на безбедноста онлајн.</p>
+            <a href="#" className="resource-link">Наскоро</a>
           </div>
           <div className="resource-card">
-            <h3>🎓 Security Best Practices</h3>
-            <p>Essential practices everyone should follow for better security.</p>
-            <a href="#" className="resource-link">Coming Soon</a>
+            <h3>🎓 Најдобри Практики за Безбедност</h3>
+            <p>Суштински практики кои секој треба да ги следи за подобра безбедност.</p>
+            <a href="#" className="resource-link">Наскоро</a>
           </div>
           <div className="resource-card">
-            <h3>👨‍👩‍👧 Parents' Guide</h3>
-            <p>How to protect your children online and teach them digital safety.</p>
-            <a href="#" className="resource-link">Coming Soon</a>
+            <h3>👨‍👩‍👧 Водич за Родители</h3>
+            <p>Како да ги заштитите вашите деца онлајн и да ги научите на дигитална безбедност.</p>
+            <a href="#" className="resource-link">Наскоро</a>
           </div>
           <div className="resource-card">
-            <h3>🏢 Organizations Guide</h3>
-            <p>Implementing security measures in schools and workplaces.</p>
-            <a href="#" className="resource-link">Coming Soon</a>
+            <h3>🏢 Водич за Организации</h3>
+            <p>Имплементирање на безбедносни мерки во училиштата и работните места.</p>
+            <a href="#" className="resource-link">Наскоро</a>
           </div>
         </div>
       </section>
@@ -346,15 +346,15 @@ const Home: React.FC = () => {
             </div>
             <div className="modal-body">
               <section className="modal-section">
-                <h3>What is it?</h3>
+                <h3>Што е тоа?</h3>
                 <p>{selectedThreat.description}</p>
               </section>
               <section className="modal-section">
-                <h3>How does it work?</h3>
+                <h3>Како функционира?</h3>
                 <p>{selectedThreat.howItWorks}</p>
               </section>
               <section className="modal-section">
-                <h3>How to prevent it:</h3>
+                <h3>Како да го спречите:</h3>
                 <ul>
                   {selectedThreat.prevention.map((tip, index) => (
                     <li key={index}>{tip}</li>
@@ -362,7 +362,7 @@ const Home: React.FC = () => {
                 </ul>
               </section>
               <section className="modal-section">
-                <h3>What to do if it happens:</h3>
+                <h3>Што да направите ако се случи:</h3>
                 <ul>
                   {selectedThreat.whatToDo.map((step, index) => (
                     <li key={index}>{step}</li>

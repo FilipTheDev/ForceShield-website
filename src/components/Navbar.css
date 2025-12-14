@@ -35,6 +35,13 @@
     filter: drop-shadow(var(--glow-purple));
 }
 
+.navbar-logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(var(--glow-purple));
+}
+
 .navbar-logo-text {
     background: var(--galaxy-gradient);
     -webkit-background-clip: text;
