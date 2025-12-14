@@ -1,0 +1,114 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 10, 31, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-cosmic);
+    box-shadow: var(--shadow-lg);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar-logo svg {
+    filter: drop-shadow(var(--glow-purple));
+}
+
+.navbar-logo-text {
+    background: var(--galaxy-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar-link {
+    color: var(--text-cosmic);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--galaxy-gradient);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+    color: var(--text-light);
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+    width: 80%;
+}
+
+.navbar-link-cta {
+    background: var(--galaxy-gradient);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.navbar-link-cta::after {
+    display: none;
+}
+
+.navbar-link-cta:hover {
+    box-shadow: var(--glow-purple);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 1rem;
+    }
+    .navbar-menu {
+        gap: 1rem;
+    }
+    .navbar-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    .navbar-logo-text {
+        display: none;
+    }
+}

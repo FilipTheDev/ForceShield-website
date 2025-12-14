@@ -1,0 +1,380 @@
+import React, { useState } from 'react';
+import './Home.css';
+
+interface Threat {
+  id: string;
+  title: string;
+  icon: string;
+  description: string;
+  howItWorks: string;
+  prevention: string[];
+  whatToDo: string[];
+}
+
+const threats: Threat[] = [
+  {
+    id: 'phishing',
+    title: 'Phishing Attacks',
+    icon: '🎣',
+    description: 'Phishing is when cybercriminals try to trick you into giving away sensitive information like passwords, credit card numbers, or personal data by pretending to be a trustworthy source.',
+    howItWorks: 'Attackers send fake emails, messages, or create fake websites that look like legitimate organizations (banks, social media, companies). They create a sense of urgency to make you act quickly without thinking - like claiming your account will be closed or you won a prize.',
+    prevention: [
+      'Always check the sender\'s email address carefully - look for misspellings',
+      'Never click on suspicious links - hover over links to see the real URL',
+      'Look for HTTPS and a padlock icon in the address bar',
+      'Be skeptical of urgent messages asking for personal information',
+      'Use our ForceShield extension to scan links before clicking'
+    ],
+    whatToDo: [
+      'Don\'t click any more links in the suspicious email/message',
+      'Change your passwords immediately if you entered any information',
+      'Enable two-factor authentication on all important accounts',
+      'Report the phishing attempt to the organization being impersonated',
+      'Run a security scan on your device',
+      'Monitor your bank accounts and credit reports for unusual activity'
+    ]
+  },
+  {
+    id: 'malware',
+    title: 'Malware & Viruses',
+    icon: '🦠',
+    description: 'Malware (malicious software) includes viruses, trojans, ransomware, and spyware - programs designed to harm your computer, steal your data, or take control of your system.',
+    howItWorks: 'Malware can be hidden in innocent-looking downloads, email attachments, fake software updates, or infected websites. Once installed, it can steal passwords, encrypt your files for ransom, spy on your activities, or turn your computer into a "zombie" for attacking others.',
+    prevention: [
+      'Only download software from official sources and trusted websites',
+      'Keep your operating system and all software updated',
+      'Install reliable antivirus software and keep it updated',
+      'Don\'t open email attachments from unknown senders',
+      'Be cautious with USB drives from unknown sources',
+      'Use our website scanner before downloading files'
+    ],
+    whatToDo: [
+      'Disconnect from the internet immediately to prevent spread',
+      'Run a full system scan with updated antivirus software',
+      'Don\'t pay ransomware demands - contact authorities instead',
+      'Restore your system from a clean backup if available',
+      'Change all passwords from a different, clean device',
+      'Seek professional help for serious infections'
+    ]
+  },
+  {
+    id: 'tracking',
+    title: 'Privacy Invasion & Tracking',
+    icon: '👁️',
+    description: 'Many websites and online services track your every move online, collecting data about your browsing habits, location, purchases, and personal information - often without your knowledge or clear consent.',
+    howItWorks: 'Websites use cookies, tracking pixels, fingerprinting techniques, and third-party scripts to follow you across the internet. This data is used to build detailed profiles about you for targeted advertising, sold to data brokers, or can be exposed in data breaches.',
+    prevention: [
+      'Use privacy-focused browsers or browser extensions',
+      'Regularly clear cookies and browsing data',
+      'Use a VPN to hide your IP address and location',
+      'Review and adjust privacy settings on websites and apps',
+      'Use our ForceShield extension to detect excessive tracking',
+      'Read privacy policies before accepting them'
+    ],
+    whatToDo: [
+      'Review which websites have access to your data',
+      'Request data deletion under GDPR or similar privacy laws',
+      'Use privacy-focused alternatives to popular services',
+      'Enable "Do Not Track" in your browser settings',
+      'Use separate email addresses for different purposes',
+      'Monitor your digital footprint regularly'
+    ]
+  },
+  {
+    id: 'social-engineering',
+    title: 'Social Engineering',
+    icon: '🎭',
+    description: 'Social engineering is when attackers manipulate people into breaking security procedures or revealing confidential information by exploiting human psychology rather than technical hacking.',
+    howItWorks: 'Attackers research their targets and craft convincing scenarios. They might pretend to be IT support, a company executive, or a friend in need. They use psychological tricks like authority, urgency, fear, or curiosity to bypass your logical thinking and get you to comply.',
+    prevention: [
+      'Be skeptical of unsolicited requests for information',
+      'Verify the identity of anyone asking for sensitive data',
+      'Don\'t share too much personal information on social media',
+      'Be cautious about what you post online - it can be used against you',
+      'Educate yourself and family members about common tactics',
+      'Establish verification procedures in your organization'
+    ],
+    whatToDo: [
+      'Stop all communication with the suspected attacker',
+      'Report the incident to IT/security team or relevant authorities',
+      'Warn others who might be targeted similarly',
+      'Review what information was disclosed and take appropriate action',
+      'Change any passwords or security questions that might be compromised',
+      'Learn from the experience to recognize future attempts'
+    ]
+  },
+  {
+    id: 'weak-passwords',
+    title: 'Weak Passwords & Credential Theft',
+    icon: '🔐',
+    description: 'Using weak, reused, or compromised passwords is one of the easiest ways for attackers to gain access to your accounts and personal information.',
+    howItWorks: 'Attackers use automated tools to guess common passwords, try leaked passwords from data breaches, or use "credential stuffing" where they try username/password combinations stolen from one site on many others. Weak passwords like "password123" or "qwerty" can be cracked in seconds.',
+    prevention: [
+      'Use strong, unique passwords for each account (12+ characters)',
+      'Include uppercase, lowercase, numbers, and special characters',
+      'Use a reputable password manager to generate and store passwords',
+      'Enable two-factor authentication (2FA) wherever possible',
+      'Never share passwords or write them down insecurely',
+      'Check if your passwords have been compromised using breach checkers'
+    ],
+    whatToDo: [
+      'Change the compromised password immediately',
+      'Change passwords on any other accounts using the same password',
+      'Enable 2FA on the affected account',
+      'Review account activity for unauthorized access',
+      'Set up alerts for suspicious login attempts',
+      'Consider using a password manager going forward'
+    ]
+  },
+  {
+    id: 'fake-websites',
+    title: 'Fake Websites & Scams',
+    icon: '🌐',
+    description: 'Fake websites impersonate legitimate businesses or services to steal your money, personal information, or install malware. They often look nearly identical to the real thing.',
+    howItWorks: 'Scammers create websites with URLs that are slight misspellings of legitimate sites (like "amaz0n.com" instead of "amazon.com"). They may offer deals that are too good to be true, fake customer support, or counterfeit products. Some are entirely fake online stores that take your money and never deliver.',
+    prevention: [
+      'Double-check URLs before entering any information',
+      'Look for HTTPS and valid security certificates',
+      'Research unfamiliar websites before making purchases',
+      'Be wary of deals that seem too good to be true',
+      'Use our ForceShield scanner to verify website legitimacy',
+      'Check for contact information and physical address'
+    ],
+    whatToDo: [
+      'Contact your bank/credit card company immediately if you made a payment',
+      'Dispute the charges and request a new card if needed',
+      'Document everything - screenshots, emails, receipts',
+      'Report the scam to authorities (FTC, IC3, local police)',
+      'Leave reviews warning others about the fake site',
+      'Check your credit report for signs of identity theft'
+    ]
+  }
+];
+
+const Home: React.FC = () => {
+  const [selectedThreat, setSelectedThreat] = useState<Threat | null>(null);
+  const [scanUrl, setScanUrl] = useState('');
+  const [scanResult, setScanResult] = useState<string | null>(null);
+
+  const handleScan = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (scanUrl.trim()) {
+      // Placeholder for actual scanning functionality
+      setScanResult('scanning');
+      setTimeout(() => {
+        setScanResult('safe');
+      }, 2000);
+    }
+  };
+
+  return (
+    <div className="home">
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1 className="hero-title">
+            Protect Yourself from<br />
+            <span className="gradient-text">Cyber Threats</span>
+          </h1>
+          <p className="hero-subtitle">
+            Learn about the most common online threats and how to stay safe. 
+            ForceShield provides real-time protection for families, schools, and organizations.
+          </p>
+          <div className="hero-buttons">
+            <a href="#scanner" className="btn btn-primary">Try Our Scanner</a>
+            <a href="#threats" className="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+        <div className="hero-image">
+          <div className="shield-illustration">
+            <svg width="300" height="300" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"
+                fill="url(#hero-shield)"
+                stroke="white"
+                strokeWidth="0.5"
+              />
+              <defs>
+                <linearGradient id="hero-shield" x1="3" y1="1" x2="21" y2="23">
+                  <stop offset="0%" stopColor="#c4b5fd" />
+                  <stop offset="50%" stopColor="#a78bfa" />
+                  <stop offset="100%" stopColor="#8b5cf6" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="features">
+        <h2 className="section-title">How ForceShield Protects You</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">🛡️</div>
+            <h3>Browser Extension</h3>
+            <p>Real-time scanning of every website you visit. Get instant warnings about dangerous sites, phishing attempts, and malware.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🔍</div>
+            <h3>Link & File Scanner</h3>
+            <p>Scan suspicious links and files before opening them. Our AI-powered system detects threats before they can harm you.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">👨‍👩‍👧‍👦</div>
+            <h3>Family Protection</h3>
+            <p>Parents can set filters, block websites, and monitor their children's online activities to ensure safe browsing.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🏫</div>
+            <h3>School & Organization</h3>
+            <p>Centrally managed protection that cannot be disabled by students or employees, ensuring a safe digital environment.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🤖</div>
+            <h3>AI Education Bot</h3>
+            <p>Interactive chatbot that explains threats in simple terms and answers your security questions 24/7.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">📚</div>
+            <h3>Security Education</h3>
+            <p>Learn about common threats, how they work, and practical steps to protect yourself and your loved ones.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Scanner Section */}
+      <section id="scanner" className="scanner-section">
+        <div className="scanner-container">
+          <h2 className="section-title">Scan a Link or Website</h2>
+          <p className="scanner-subtitle">
+            Enter a URL to check if it's safe before visiting. Our AI analyzes millions of threat indicators.
+          </p>
+          <form onSubmit={handleScan} className="scanner-form">
+            <input
+              type="url"
+              value={scanUrl}
+              onChange={(e) => setScanUrl(e.target.value)}
+              placeholder="Enter a URL to scan (e.g., https://example.com)"
+              className="scanner-input"
+              required
+            />
+            <button type="submit" className="btn btn-primary">
+              {scanResult === 'scanning' ? 'Scanning...' : 'Scan Now'}
+            </button>
+          </form>
+          {scanResult && scanResult !== 'scanning' && (
+            <div className={`scan-result ${scanResult}`}>
+              {scanResult === 'safe' && (
+                <>
+                  <div className="result-icon">✅</div>
+                  <div className="result-content">
+                    <h3>Safe Website</h3>
+                    <p>This website appears to be safe. No threats detected.</p>
+                    <small>Note: This is a demo. Connect to our API for real scanning.</small>
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+          <div className="scanner-note">
+            <strong>Note:</strong> File scanning will be available soon. Currently, we support URL scanning.
+          </div>
+        </div>
+      </section>
+
+      {/* Threats Education Section */}
+      <section id="threats" className="threats-section">
+        <h2 className="section-title">Common Cyber Threats Explained</h2>
+        <p className="threats-subtitle">
+          Understanding threats is the first step to staying safe online. Click on any threat to learn more.
+        </p>
+        <div className="threats-grid">
+          {threats.map((threat) => (
+            <div
+              key={threat.id}
+              className="threat-card"
+              onClick={() => setSelectedThreat(threat)}
+            >
+              <div className="threat-icon">{threat.icon}</div>
+              <h3>{threat.title}</h3>
+              <p>{threat.description}</p>
+              <button className="threat-learn-more">Learn More →</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Educational Resources */}
+      <section className="resources-section">
+        <h2 className="section-title">Additional Resources</h2>
+        <p className="resources-subtitle">
+          Expand your cybersecurity knowledge with these helpful materials.
+        </p>
+        <div className="resources-grid">
+          <div className="resource-card">
+            <h3>📖 Beginner's Guide to Online Safety</h3>
+            <p>A comprehensive guide covering the basics of staying safe online.</p>
+            <a href="#" className="resource-link">Coming Soon</a>
+          </div>
+          <div className="resource-card">
+            <h3>🎓 Security Best Practices</h3>
+            <p>Essential practices everyone should follow for better security.</p>
+            <a href="#" className="resource-link">Coming Soon</a>
+          </div>
+          <div className="resource-card">
+            <h3>👨‍👩‍👧 Parents' Guide</h3>
+            <p>How to protect your children online and teach them digital safety.</p>
+            <a href="#" className="resource-link">Coming Soon</a>
+          </div>
+          <div className="resource-card">
+            <h3>🏢 Organizations Guide</h3>
+            <p>Implementing security measures in schools and workplaces.</p>
+            <a href="#" className="resource-link">Coming Soon</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Threat Detail Modal */}
+      {selectedThreat && (
+        <div className="modal-overlay" onClick={() => setSelectedThreat(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedThreat(null)}>×</button>
+            <div className="modal-header">
+              <div className="modal-icon">{selectedThreat.icon}</div>
+              <h2>{selectedThreat.title}</h2>
+            </div>
+            <div className="modal-body">
+              <section className="modal-section">
+                <h3>What is it?</h3>
+                <p>{selectedThreat.description}</p>
+              </section>
+              <section className="modal-section">
+                <h3>How does it work?</h3>
+                <p>{selectedThreat.howItWorks}</p>
+              </section>
+              <section className="modal-section">
+                <h3>How to prevent it:</h3>
+                <ul>
+                  {selectedThreat.prevention.map((tip, index) => (
+                    <li key={index}>{tip}</li>
+                  ))}
+                </ul>
+              </section>
+              <section className="modal-section">
+                <h3>What to do if it happens:</h3>
+                <ul>
+                  {selectedThreat.whatToDo.map((step, index) => (
+                    <li key={index}>{step}</li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Home;
