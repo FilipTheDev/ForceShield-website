@@ -14,139 +14,139 @@ interface Threat {
 const threats: Threat[] = [
   {
     id: 'phishing',
-    title: 'Phishing Attacks',
+    title: 'Фишинг Напади',
     icon: '🎣',
-    description: 'Phishing is when cybercriminals try to trick you into giving away sensitive information like passwords, credit card numbers, or personal data by pretending to be a trustworthy source.',
-    howItWorks: 'Attackers send fake emails, messages, or create fake websites that look like legitimate organizations (banks, social media, companies). They create a sense of urgency to make you act quickly without thinking - like claiming your account will be closed or you won a prize.',
+    description: 'Фишингот е кога сајбер криминалците се обидуваат да ве измамат да дадете чувствителни информации како лозинки, броеви на кредитни картички или лични податоци претварајќи се дека се доверлив извор.',
+    howItWorks: 'Напаѓачите праќаат лажни е-пошти, пораки или креираат лажни веб-страници кои изгледаат како легитимни организации (банки, социјални мрежи, компании). Тие креираат чувство на хитност за да ве натераат брзо да дејствувате без да размислувате - како тврдење дека вашата сметка ќе биде затворена или дека сте добиле награда.',
     prevention: [
-      'Always check the sender\'s email address carefully - look for misspellings',
-      'Never click on suspicious links - hover over links to see the real URL',
-      'Look for HTTPS and a padlock icon in the address bar',
-      'Be skeptical of urgent messages asking for personal information',
-      'Use our ForceShield extension to scan links before clicking'
+      'Секогаш внимателно проверете ја е-пошта на пратителот - барајте правописни грешки',
+      'Никогаш не кликајте на сомнителни врски - позиционирајте го мишот над врските за да го видите вистинскиот URL',
+      'Барајте HTTPS и икона за катанец во адресната лента',
+      'Бидете скептични кон хитни пораки кои бараат лични информации',
+      'Користете го нашето ForceShield проширување за да скенирате врски пред кликање'
     ],
     whatToDo: [
-      'Don\'t click any more links in the suspicious email/message',
-      'Change your passwords immediately if you entered any information',
-      'Enable two-factor authentication on all important accounts',
-      'Report the phishing attempt to the organization being impersonated',
-      'Run a security scan on your device',
-      'Monitor your bank accounts and credit reports for unusual activity'
+      'Не кликајте повеќе врски во сомнителната е-пошта/порака',
+      'Променете ги вашите лозинки веднаш ако сте внеле какви било информации',
+      'Овозможете двофакторска автентикација на сите важни сметки',
+      'Пријавете го покушајот за фишинг кон организацијата чиј идентитет е злоупотребен',
+      'Извршете безбедносно скенирање на вашиот уред',
+      'Следете ги вашите банкарски сметки и кредитни извештаи за невобичаени активности'
     ]
   },
   {
     id: 'malware',
-    title: 'Malware & Viruses',
+    title: 'Малициозен Софтвер и Вируси',
     icon: '🦠',
-    description: 'Malware (malicious software) includes viruses, trojans, ransomware, and spyware - programs designed to harm your computer, steal your data, or take control of your system.',
-    howItWorks: 'Malware can be hidden in innocent-looking downloads, email attachments, fake software updates, or infected websites. Once installed, it can steal passwords, encrypt your files for ransom, spy on your activities, or turn your computer into a "zombie" for attacking others.',
+    description: 'Малициозниот софтвер вклучува вируси, тројанци, ransomware и spyware - програми дизајнирани да го оштетат вашиот компјутер, да ги украдат вашите податоци или да го преземат контролата на вашиот систем.',
+    howItWorks: 'Малициозниот софтвер може да биде скриен во преземања кои изгледаат невино, прилози на е-пошта, лажни ажурирања на софтвер или заразени веб-страници. Кога ќе се инсталира, може да краде лозинки, да ги шифрира вашите датотеки за откуп, да ве шпионира или да го претвори вашиот компјутер во "zombie" за напаѓање на други.',
     prevention: [
-      'Only download software from official sources and trusted websites',
-      'Keep your operating system and all software updated',
-      'Install reliable antivirus software and keep it updated',
-      'Don\'t open email attachments from unknown senders',
-      'Be cautious with USB drives from unknown sources',
-      'Use our website scanner before downloading files'
+      'Преземајте софтвер само од званични извори и доверливи веб-страници',
+      'Одржувајте го вашиот оперативен систем и сиот софтвер ажуриран',
+      'Инсталирајте доверлив антивирусен софтвер и одржувајте го ажуриран',
+      'Не отворајте прилози на е-пошта од непознати пратители',
+      'Бидете претпазливи со USB уреди од непознати извори',
+      'Користете го нашиот скенер за веб-страници пред да преземате датотеки'
     ],
     whatToDo: [
-      'Disconnect from the internet immediately to prevent spread',
-      'Run a full system scan with updated antivirus software',
-      'Don\'t pay ransomware demands - contact authorities instead',
-      'Restore your system from a clean backup if available',
-      'Change all passwords from a different, clean device',
-      'Seek professional help for serious infections'
+      'Одвоете се од интернет веднаш за да се спречи ширењето',
+      'Извршете целосно скенирање на системот со ажуриран антивирусен софтвер',
+      'Не плаќајте ransomware барања - контактирајте ги властите наместо тоа',
+      'Вратете го вашиот систем од чиста резервна копија ако е достапна',
+      'Променете ги сите лозинки од друг, чист уред',
+      'Барајте професионална помош за сериозни инфекции'
     ]
   },
   {
     id: 'tracking',
-    title: 'Privacy Invasion & Tracking',
+    title: 'Нарушување на Приватноста и Следење',
     icon: '👁️',
-    description: 'Many websites and online services track your every move online, collecting data about your browsing habits, location, purchases, and personal information - often without your knowledge or clear consent.',
-    howItWorks: 'Websites use cookies, tracking pixels, fingerprinting techniques, and third-party scripts to follow you across the internet. This data is used to build detailed profiles about you for targeted advertising, sold to data brokers, or can be exposed in data breaches.',
+    description: 'Многу веб-страници и онлајн услуги го следат секој ваш потез онлајн, собирајќи податоци за вашите навики на прегледување, локација, куповини и лични информации - често без вашето знаење или јасна согласност.',
+    howItWorks: 'Веб-страниците користат cookies, пиксели за следење, техники за fingerprinting и скрипти на трети страни за да ве следат низ интернет. Овие податоци се користат за изградба на детални профили за вас за целно рекламирање, продавање на посредници за податоци или можат да бидат изложени при пробиви на податоци.',
     prevention: [
-      'Use privacy-focused browsers or browser extensions',
-      'Regularly clear cookies and browsing data',
-      'Use a VPN to hide your IP address and location',
-      'Review and adjust privacy settings on websites and apps',
-      'Use our ForceShield extension to detect excessive tracking',
-      'Read privacy policies before accepting them'
+      'Користете прегледувачи или проширувања фокусирани на приватност',
+      'Редовно бришете cookies и податоци за прегледување',
+      'Користете VPN за да го скриете вашиот IP адреса и локација',
+      'Прегледајте и прилагодете ги поставките за приватност на веб-страниците и апликациите',
+      'Користете го нашето ForceShield проширување за да откривате прекумерно следење',
+      'Читајте ги полисите за приватност пред да ги прифатите'
     ],
     whatToDo: [
-      'Review which websites have access to your data',
-      'Request data deletion under GDPR or similar privacy laws',
-      'Use privacy-focused alternatives to popular services',
-      'Enable "Do Not Track" in your browser settings',
-      'Use separate email addresses for different purposes',
-      'Monitor your digital footprint regularly'
+      'Прегледајте кои веб-страници имаат пристап до вашите податоци',
+      'Барајте брисење на податоци според GDPR или слични закони за приватност',
+      'Користете алтернативи фокусирани на приватност на популарни услуги',
+      'Овозможете "Do Not Track" во поставките на вашиот прегледувач',
+      'Користете одделни е-пошти за различни намени',
+      'Редовно следете го вашиот дигитален траг'
     ]
   },
   {
     id: 'social-engineering',
-    title: 'Social Engineering',
+    title: 'Социјално Инженерство',
     icon: '🎭',
-    description: 'Social engineering is when attackers manipulate people into breaking security procedures or revealing confidential information by exploiting human psychology rather than technical hacking.',
-    howItWorks: 'Attackers research their targets and craft convincing scenarios. They might pretend to be IT support, a company executive, or a friend in need. They use psychological tricks like authority, urgency, fear, or curiosity to bypass your logical thinking and get you to comply.',
+    description: 'Социјалното инженерство е кога напаѓачите манипулираат со луѓето за да ги прекршат безбедносните процедури или да откриваат доверливи информации користејќи човечка психологија наместо техничко хакирање.',
+    howItWorks: 'Напаѓачите ги истражуваат своите цели и креираат убедливи сценариа. Тие можат да се претвараат дека се IT поддршка, ексекутив на компанија или пријател кој има потреба од помош. Тие користат психолошки трикови како авторитет, хитност, страв или любопитност за да го заобиколат вашето логичко размислување.',
     prevention: [
-      'Be skeptical of unsolicited requests for information',
-      'Verify the identity of anyone asking for sensitive data',
-      'Don\'t share too much personal information on social media',
-      'Be cautious about what you post online - it can be used against you',
-      'Educate yourself and family members about common tactics',
-      'Establish verification procedures in your organization'
+      'Бидете скептични кон небарани барања за информации',
+      'Проверете го идентитетот на секој кој бара чувствителни податоци',
+      'Не споделувајте преку многу лични информации на социјалните мрежи',
+      'Бидете претпазливи за тоа што го објавувате онлајн - може да биде користено против вас',
+      'Едуцирајте се себеси и членовите на семејството за вообичаените тактики',
+      'Успоставете процедури за верификација во вашата организација'
     ],
     whatToDo: [
-      'Stop all communication with the suspected attacker',
-      'Report the incident to IT/security team or relevant authorities',
-      'Warn others who might be targeted similarly',
-      'Review what information was disclosed and take appropriate action',
-      'Change any passwords or security questions that might be compromised',
-      'Learn from the experience to recognize future attempts'
+      'Спрете ја целата комуникација со сомнителниот напаѓач',
+      'Пријавете го инцидентот кон IT/безбедносниот тим или релевантни власти',
+      'Предупредете ги другите кои можат да бидат цел на сличен начин',
+      'Прегледајте кои информации се откриени и подвземете соодветна акција',
+      'Променете ги лозинките или безбедносните прашања кои можат да бидат компромитирани',
+      'Научете од искуството за да ги препознаете идните покушаи'
     ]
   },
   {
     id: 'weak-passwords',
-    title: 'Weak Passwords & Credential Theft',
+    title: 'Слаби Лозинки и Крадење на Пријавни Информации',
     icon: '🔐',
-    description: 'Using weak, reused, or compromised passwords is one of the easiest ways for attackers to gain access to your accounts and personal information.',
-    howItWorks: 'Attackers use automated tools to guess common passwords, try leaked passwords from data breaches, or use "credential stuffing" where they try username/password combinations stolen from one site on many others. Weak passwords like "password123" or "qwerty" can be cracked in seconds.',
+    description: 'Користењето на слаби, повторно користени или компромитирани лозинки е еден од најлесните начини на кои напаѓачите можат да добијат пристап до вашите сметки и лични информации.',
+    howItWorks: 'Напаѓачите користат автоматски алатки за да погодат вообичаени лозинки, пробуваат исцурени лозинки од пробиви на податоци или користат "credential stuffing" каде пробуваат комбинации на корисничко име/лозинка украдени од една локација на многу други. Слаби лозинки како "password123" или "qwerty" можат да бидат раскриени за секунди.',
     prevention: [
-      'Use strong, unique passwords for each account (12+ characters)',
-      'Include uppercase, lowercase, numbers, and special characters',
-      'Use a reputable password manager to generate and store passwords',
-      'Enable two-factor authentication (2FA) wherever possible',
-      'Never share passwords or write them down insecurely',
-      'Check if your passwords have been compromised using breach checkers'
+      'Користете силни, уникатни лозинки за секоја сметка (12+ карактери)',
+      'Вклучете големи букви, мали букви, броеви и специјални карактери',
+      'Користете доверлив менаџер за лозинки за да генерирате и чувате лозинки',
+      'Овозможете двофакторска автентикација (2FA) каде год е можно',
+      'Никогаш не споделувајте лозинки ниту не ги запишувајте небезбедно',
+      'Проверете дали вашите лозинки се компромитирани користејќи алатки за проверка на пробиви'
     ],
     whatToDo: [
-      'Change the compromised password immediately',
-      'Change passwords on any other accounts using the same password',
-      'Enable 2FA on the affected account',
-      'Review account activity for unauthorized access',
-      'Set up alerts for suspicious login attempts',
-      'Consider using a password manager going forward'
+      'Променете ја компромитираната лозинка веднаш',
+      'Променете ги лозинките на сите други сметки кои користат иста лозинка',
+      'Овозможете 2FA на засегнатата сметка',
+      'Прегледајте ја активноста на сметката за неовластен пристап',
+      'Поставете упозоренија за сомнителни покушаи за најавување',
+      'Разгледајте да користите менаџер за лозинки во иднина'
     ]
   },
   {
     id: 'fake-websites',
-    title: 'Fake Websites & Scams',
+    title: 'Лажни Веб-страници и Измами',
     icon: '🌐',
-    description: 'Fake websites impersonate legitimate businesses or services to steal your money, personal information, or install malware. They often look nearly identical to the real thing.',
-    howItWorks: 'Scammers create websites with URLs that are slight misspellings of legitimate sites (like "amaz0n.com" instead of "amazon.com"). They may offer deals that are too good to be true, fake customer support, or counterfeit products. Some are entirely fake online stores that take your money and never deliver.',
+    description: 'Лажните веб-страници се претставуваат како легитимни бизниси или услуги за да ги украдат вашите пари, лични информации или да инсталираат малициозен софтвер. Тие често изгледаат почти идентични на вистинските.',
+    howItWorks: 'Измамниците креираат веб-страници со URL адреси кои се мали правописни грешки на легитимни локации (како "amaz0n.com" наместо "amazon.com"). Тие можат да нудат понуди кои се преку добри за да бидат вистинити, лажна корисничка поддршка или кривотворени производи. Некои се целосно лажни онлајн продавници кои ги земаат вашите пари и никогаш не доставуваат.',
     prevention: [
-      'Double-check URLs before entering any information',
-      'Look for HTTPS and valid security certificates',
-      'Research unfamiliar websites before making purchases',
-      'Be wary of deals that seem too good to be true',
-      'Use our ForceShield scanner to verify website legitimacy',
-      'Check for contact information and physical address'
+      'Двојно проверете ги URL адресите пред да внесете какви било информации',
+      'Барајте HTTPS и валидни безбедносни сертификати',
+      'Истражете ги непознатите веб-страници пред да направите куповина',
+      'Бидете претпазливи кон понудите кои изгледаат преку добри за да бидат вистинити',
+      'Користете го нашиот ForceShield скенер за да верифицирате легитимност',
+      'Проверете за контакт информации и физичка адреса'
     ],
     whatToDo: [
-      'Contact your bank/credit card company immediately if you made a payment',
-      'Dispute the charges and request a new card if needed',
-      'Document everything - screenshots, emails, receipts',
-      'Report the scam to authorities (FTC, IC3, local police)',
-      'Leave reviews warning others about the fake site',
-      'Check your credit report for signs of identity theft'
+      'Контактирајте го вашата банка/компанија за кредитни картички веднаш ако сте направиле плаќање',
+      'Оспорете ги наплатите и барајте нова картичка ако е потребно',
+      'Документирајте сè - снимки на екран, е-пошти, сметки',
+      'Пријавете го измамникот кон властите (FTC, IC3, локална полиција)',
+      'Оставете рецензии кои предупредуваат други за лажната локација',
+      'Проверете го вашиот кредитен извештај за знаци на крадење на идентитет'
     ]
   }
 ];
@@ -174,7 +174,7 @@ const Home: React.FC = () => {
         <div className="hero-content">
           <h1 className="hero-title">
             Заштитете се од<br />
-            <span className="gradient-text">Кибер Закани</span>
+            <span className="gradient-text">Сајбер Закани</span>
           </h1>
           <p className="hero-subtitle">
             Научете за најчестите онлајн закани и како да останете безбедни. 
@@ -248,7 +248,7 @@ const Home: React.FC = () => {
         <div className="scanner-container">
           <h2 className="section-title">Скенирај Врска или Веб-страница</h2>
           <p className="scanner-subtitle">
-            Внесете URL адреса за да проверите дали е безбедна пред да ја посетите. Нашата АИ анализира милиони показатели за закани.
+            Внесете URL адреса за да проверите дали е безбедна пред да ја посетите.
           </p>
           <form onSubmit={handleScan} className="scanner-form">
             <input
@@ -285,7 +285,7 @@ const Home: React.FC = () => {
 
       {/* Threats Education Section */}
       <section id="threats" className="threats-section">
-        <h2 className="section-title">Објаснети Вообичаени Кибер Закани</h2>
+        <h2 className="section-title">Објаснети Вообичаени Сајбер Закани</h2>
         <p className="threats-subtitle">
           Разбирањето на заканите е првиот чекор кон безбедност онлајн. Кликнете на која било закана за да дознаете повеќе.
         </p>
@@ -309,7 +309,7 @@ const Home: React.FC = () => {
       <section className="resources-section">
         <h2 className="section-title">Дополнителни Ресурси</h2>
         <p className="resources-subtitle">
-          Проширете го вашето знаење за кибер безбедност со овие корисни материјали.
+          Проширете го вашето знаење за сајбер безбедност со овие корисни материјали.
         </p>
         <div className="resources-grid">
           <div className="resource-card">

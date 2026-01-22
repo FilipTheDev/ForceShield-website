@@ -12,7 +12,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Здраво! Јас сум Козмо, вашиот ForceShield асистент. Можам да ви помогнам да разберете кибер закани, да одговорам на безбедносни прашања и да обезбедам совети за безбедност. Што сакате да знаете?',
+      text: 'Здраво! Јас сум Козмо, вашиот ForceShield асистент. Можам да ви помогнам да разберете сајбер закани, да одговорам на безбедносни прашања и да обезбедам совети за безбедност. Што сакате да знаете?',
       sender: 'bot',
       timestamp: new Date()
     }
@@ -139,7 +139,7 @@ const Chatbot: React.FC = () => {
             </div>
           </div>
           <div className="chatbot-info">
-            <p>Прашајте ме за кибер безбедност, заканите, и како да останете безбедни онлајн.</p>
+            <p>Прашајте ме за сајбер безбедност, заканите, и како да останете безбедни онлајн.</p>
           </div>
         </div>
 
@@ -199,15 +199,17 @@ const Chatbot: React.FC = () => {
           </div>
         </div>
 
-        <form className="chatbot-input-form" onSubmit={handleSubmit}>
+        <form className="chatbot-input-form" onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Внесете го вашето прашање овде..."
             className="chatbot-input"
+            disabled
+            title="Оваа функционалност сè уште не е додадена"
           />
-          <button type="submit" className="chatbot-send-button" disabled={!inputValue.trim()}>
+          <button type="submit" className="chatbot-send-button" disabled title="Оваа функционалност сè уште не е додадена">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -216,8 +218,7 @@ const Chatbot: React.FC = () => {
         </form>
 
         <div className="chatbot-disclaimer">
-          <strong>Напомена:</strong> Ова е демо chatbot со однапред програмирани одговори. 
-          Целосната верзија ќе биде поврзана со нашето АИ API за посеопфатна и персонализирана помош.
+          <strong>⚠️ Напомена:</strong> Оваа функционалност сè уште не е додадена. 
         </div>
       </div>
     </div>
