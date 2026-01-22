@@ -50,46 +50,6 @@ const Auth: React.FC = () => {
     }
   };
 
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {};
-
-    // Email validation
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-
-    // Password validation
-    if (!formData.password) {
-      newErrors.password = 'Password is required';
-    } else if (formData.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters';
-    }
-
-    // Signup specific validations
-    if (mode === 'signup') {
-      if (!formData.name) {
-        newErrors.name = 'Name is required';
-      }
-
-      if (!formData.role) {
-        newErrors.role = 'Please select a role';
-      }
-
-      if (formData.password !== formData.confirmPassword) {
-        newErrors.confirmPassword = 'Passwords do not match';
-      }
-
-      if (formData.role === 'pro' && !formData.organizationName) {
-        newErrors.organizationName = 'Organization name is required for Pro accounts';
-      }
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Authentication functionality not yet implemented
