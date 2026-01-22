@@ -92,11 +92,8 @@ const Auth: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateForm()) {
-      // Here you would normally send data to your backend
-      console.log('Form submitted:', { mode, ...formData });
-      alert(`${mode === 'signup' ? 'Sign Up' : 'Login'} successful! (Demo - not actually connected to backend)`);
-    }
+    // Authentication functionality not yet implemented
+    alert('⚠️ Оваа функционалност сè уште не е додадена. Автентикацијата и регистрацијата моментално не се достапни.');
   };
 
   return (
@@ -302,8 +299,8 @@ const Auth: React.FC = () => {
 
         <div className="auth-footer">
           <p className="disclaimer">
-            <strong>Демо Напомена:</strong> Ова е frontend демонстрација. 
-            Автентикацијата на корисници ќе биде поврзана со безбеден backend API во продукција.
+            <strong>⚠️ Напомена:</strong> Оваа функционалност сè уште не е додадена. 
+            Автентикацијата и регистрацијата на корисници моментално не се достапни.
           </p>
         </div>
       </div>
